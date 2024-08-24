@@ -22,8 +22,8 @@ jobs:
             - name: Setup java JDK 17
               uses: actions/setup-java@v4
               with:
-                distribution: zulu
-                java-version: 17
+                java-version: '17'
+                distribution: 'zulu'
             - run: |
                 echo "Java JDK 17 Set up Successfully"
 
