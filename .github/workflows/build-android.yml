@@ -51,6 +51,9 @@ jobs:
                 name: android-dev-artifact
                 path: ./android/app/build/outputs/apk/release/app-release.apk
                 retention-day: 7
+            - name: Environments
+              run: |
+                echo "API URL = ${{ vars.API_URL }}"
 
     build-stage-android:
         runs-on: ubuntu-latest
