@@ -38,8 +38,9 @@ jobs:
             
             - name: Create Staging Env
               run: |
-                npm run stage:env
-                echo "environment created successfully"
+                echo "API_URL=${{ secrets.API_URL }}" > .env
+                echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" >> .env
+                echo ".env file created successfully!"
 
             - name: Android Release Build
               run: |
@@ -86,8 +87,9 @@ jobs:
             
             - name: Create Staging Env
               run: |
-                npm run stage:env
-                echo "environment created successfully"
+               echo "API_URL=${{ secrets.API_URL }}" > .env
+               echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" >> .env
+               echo ".env file created successfully!"
 
             - name: Android Release Build
               run: |
