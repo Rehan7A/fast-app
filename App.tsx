@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import config from "react-native-config"
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -62,6 +63,7 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -72,6 +74,8 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Text style={styles.title}>API URL : {config.API_URL}</Text>
+        <Text style={styles.title}>Google Map API key : {config.GOOGLE_MAPS_API_KEY}</Text>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -113,6 +117,10 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  title:{
+    fontSize:20,
+    fontWeight:"bold"
+  }
 });
 
 export default App;
